@@ -9,11 +9,21 @@ const connect = function () {
   conn.setEncoding("utf8");
 
   conn.on('connect', () => {
-    console.log('kick for afk')
+    console.log('successfully connected to server')
+    conn.write('Name: AAA')
+    // setInterval(() => {
+    //   conn.write("Move: up")
+    // })
   })
   
 
-  return conn;
+  // conn.on('afk', () => {
+  //   setTimeout(() => {
+  //     connection.end()
+  //     console.log('disconnected for afk')
+  //   }, 1000)
+  // });
+  return conn
 };
 
 module.exports = connect;
