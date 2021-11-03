@@ -11,18 +11,12 @@ const connect = function () {
   conn.on('connect', () => {
     console.log('successfully connected to server')
     conn.write('Name: AAA')
-    // setInterval(() => {
-    //   conn.write("Move: up")
-    // })
+  })
+
+  conn.on('data', (data) => {
+    console.log('Server says', data)
   })
   
-
-  // conn.on('afk', () => {
-  //   setTimeout(() => {
-  //     connection.end()
-  //     console.log('disconnected for afk')
-  //   }, 1000)
-  // });
   return conn
 };
 
