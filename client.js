@@ -10,7 +10,7 @@ const connect = function () {
 
   conn.on('connect', () => {
     console.log('successfully connected to server')
-    conn.write('Name: AAA')
+    conn.write('Name: JAM')
   })
 
   conn.on('data', (data) => {
